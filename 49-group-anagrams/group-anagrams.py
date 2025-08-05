@@ -13,5 +13,8 @@ class Solution:
         result = []
         for key, value in anagrams.items():
             result.append(value)
+        # without list comprehension
+        return result
 
+        # list comprehension
         return [value for key, value in anagrams.items()]
