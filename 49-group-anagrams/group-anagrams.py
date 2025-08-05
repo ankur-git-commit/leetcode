@@ -14,4 +14,4 @@ class Solution:
         for key, value in anagrams.items():
             result.append(value)
 
-        return result
+        return [value for key, value in anagrams.items()]
