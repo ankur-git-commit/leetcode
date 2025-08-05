@@ -1,10 +1,30 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        # O(n) solution, kind of like bucket sort
+        freq_map = {}
+        freq = [[] for i in range(len(nums) + 1)]
+        for item in nums:
+            freq_map[item] = 1 + freq_map.get(item, 0)
 
+        for num, count in freq_map.items():
+            freq[count].append(num)
+
+        res = []
+        for i in range(len(freq) -1, -1):
+            for num in freq[i]:
+                res.append(num)
+                if len(res) == k:
+                    return res
+
+        # return []
+
+        # All solutions below are O(nlogn) time complexity cause of sorting method that is being used
         # Solution 1
         # with counter dictionary and list comprehension
         elements_freq = Counter(nums)
-        sort_by_values = sorted(elements_freq.items(), key=lambda item: item[1], reverse=True)
+        sort_by_values = sorted(
+            elements_freq.items(), key=lambda item: item[1], reverse=True
+        )
         return [sort_by_values[i][0] for i in range(k)]
 
         # Solution 2
