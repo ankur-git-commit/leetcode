@@ -10,13 +10,14 @@ class Solution:
             freq[count].append(num)
 
         res = []
-        for i in range(len(freq) -1, -1):
+        for i in range(len(freq) - 1, -1):
             for num in freq[i]:
+                print(freq[i])
+                print(freq)
                 res.append(num)
                 if len(res) == k:
                     return res
 
-        # return []
 
         # All solutions below are O(nlogn) time complexity cause of sorting method that is being used
         # Solution 1
