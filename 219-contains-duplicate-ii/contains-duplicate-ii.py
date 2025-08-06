@@ -3,7 +3,6 @@ class Solution:
         window = set()
         L = 0
         for R in range(len(nums)):
-            print("R", R, "L", L)
             if R - L > k:
                 window.remove(nums[L])
                 L += 1
