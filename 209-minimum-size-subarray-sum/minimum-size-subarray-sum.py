@@ -7,7 +7,7 @@ class Solution:
         for R in range(len(nums)):
             total += nums[R]
             while total >= target:
-                result = min(abs(R - L + 1), result)
+                result = min((R - L + 1), result)
                 total -= nums[L]
                 L += 1
 
