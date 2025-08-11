@@ -4,8 +4,8 @@ class Solution:
         L, R = 0, len(height) - 1
 
         while L < R:
-            max_height_storage = min(height[L], height[R])
-            water_stored = max_height_storage * (R - L)
+            # max_height_storage = min(height[L], height[R])
+            water_stored = min(height[L], height[R]) * (R - L)
 
             result = max(result, water_stored)
 
