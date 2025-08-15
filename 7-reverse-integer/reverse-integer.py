@@ -5,7 +5,7 @@ class Solution:
         else:
             x = int(str(x)[::-1])
         
-        if x > (2**31 - 1) or x < (-2 ** 31): 
-            return 0
+        # if x > (2**31 - 1) or x < (-2 ** 31): 
+        #     return 0
 
-        return x
+        return 0 if x > (2**31 - 1) or x < (-2 ** 31) else x
