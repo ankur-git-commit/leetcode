@@ -1,9 +1,9 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        # using while loop
         L, R = 0, len(numbers) - 1
         if len(numbers) == 2:
             return [L + 1, R + 1]
-
 
         while L < R:
             sum_numbers = numbers[L] + numbers[R]
@@ -11,5 +11,6 @@ class Solution:
                 return [L + 1, R + 1]
             elif sum_numbers > target:
                 R -= 1
-            else: 
+            else:
                 L += 1
+ 
