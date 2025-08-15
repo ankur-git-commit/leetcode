@@ -15,4 +15,4 @@ class Solution:
                 L += 1
             else:
                 R -= 1
-        return result if result < k else -1
+        return result
