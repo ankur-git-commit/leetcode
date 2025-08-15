@@ -3,8 +3,9 @@ class Solution:
         result = -1
         if len(nums) == 1:
             return result
+        
         nums.sort()
-        print(nums)
+
         L = 0
         R = len(nums) - 1
         while L < R:
