@@ -1,13 +1,13 @@
 class Solution:
     def numOfSubarrays(self, arr: List[int], k: int, threshold: int) -> int:
-        sum_arr = sum(arr[: k - 1])
-        L = 0
-        result = 0
-        for R in range(k - 1, len(arr)):
-            sum_arr += arr[R]
-            average = sum_arr / k
-            if average >= threshold:
-                result += 1
-            sum_arr -= arr[L]
-            L += 1
-        return result
+        subarray = sum(arr[:k-1])
+        res = 0
+
+        for i in range(k-1, len(arr)):
+            subarray += arr[i]
+            if subarray/k >= threshold:
+                res += 1
+            print(i)
+            subarray -= arr[i + 1 -k]
+        
+        return res
