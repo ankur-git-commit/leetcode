@@ -7,7 +7,9 @@ class Solution:
         profit = 0
         for i in range(1, len(prices)):
             profit = max(profit, prices[i] - curr_price)
-            curr_price = min(curr_price, prices[i])
+            
+            if prices[i] < curr_price:
+                curr_price = prices[i]
         
         return profit
 
