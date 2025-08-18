@@ -4,7 +4,8 @@ class Solution:
         max_water_storage = 0
         while L < R:
             min_height = min(height[L], height[R])
-            max_water_storage = max(max_water_storage, min_height * abs(L - R))
+            curr_storage =  min_height * abs(L - R)
+            max_water_storage = max(max_water_storage, curr_storage)
 
             if height[L] < height[R]:
                 L += 1
