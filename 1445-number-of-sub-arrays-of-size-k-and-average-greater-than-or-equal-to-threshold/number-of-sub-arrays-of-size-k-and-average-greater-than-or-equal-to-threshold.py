@@ -7,7 +7,6 @@ class Solution:
             subarray += arr[i]
             if subarray/k >= threshold:
                 res += 1
-            print(i)
             subarray -= arr[i + 1 -k]
         
         return res
