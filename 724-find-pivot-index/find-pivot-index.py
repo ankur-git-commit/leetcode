@@ -1,0 +1,32 @@
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        if len(nums) <= 1:
+            return 0
+
+        n = len(nums)
+        prefix, postfix = [0] * len(nums), [0] * len(nums)
+        pre, post = 0, 0
+        for i in range(n):
+            pre += nums[i]
+            prefix[i] = pre
+
+            j = n - i - 1
+            post += nums[j]
+            postfix[j] = post
+        
+        for i in range(n):
+            if i == 0 and 0 == postfix[i + 1]:
+                return i
+            elif i == n - 1 and prefix[i - 1] == 0:
+                return i 
+            elif i in range(1, n-1) and prefix[i - 1] == postfix[i + 1]:
+                return i
+
+
+            # left = i - 1 if i != 0 else 0
+            # right = i + 1 if i < n - 1 else 0
+            # print(left, right)
+            # if prefix[left] == postfix[right]:
+            #     return i
+
+        return -1
