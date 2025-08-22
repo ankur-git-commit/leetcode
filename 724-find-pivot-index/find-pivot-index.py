@@ -3,13 +3,14 @@ class Solution:
         # most optimal
         total = sum(nums)
         left_sum = 0
+        # postfix = [28,27,20,17,11,6]
         for i in range(len(nums)):
             right_sum = total - nums[i] - left_sum
+            print(right_sum)
             if left_sum == right_sum:
                 return i
             left_sum += nums[i]
         return -1
-
 
         # not optimal 
         prefix = []
@@ -42,10 +43,6 @@ class Solution:
             post += nums[j]
             postfix[j] = post
         
-        # if postfix[1] == 0:
-        #     return 0
-        # elif prefix[n-1] == 0:
-        #     return n-1
 
         for i in range(n):
             if i == 0 and 0 == postfix[i + 1]:
