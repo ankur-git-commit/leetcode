@@ -14,12 +14,17 @@ class Solution:
             post += nums[j]
             postfix[j] = post
         
+        # if postfix[1] == 0:
+        #     return 0
+        # elif prefix[n-1] == 0:
+        #     return n-1
+
         for i in range(n):
             if i == 0 and 0 == postfix[i + 1]:
                 return i
             elif i == n - 1 and prefix[i - 1] == 0:
                 return i 
-            elif i in range(1, n-1) and prefix[i - 1] == postfix[i + 1]:
+            elif 1 <= i < n - 1 and prefix[i - 1] == postfix[i + 1]:
                 return i
 
 
