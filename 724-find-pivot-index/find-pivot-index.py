@@ -1,5 +1,22 @@
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
+        
+        prefix = []
+        output = 0
+        for i in range(len(nums)):
+            output += nums[i]
+            prefix.append(output)
+
+        for i in range(len(nums)):
+            left = prefix[i - 1] if i != 0 else 0
+            right = prefix[-1] - prefix[i]
+
+            if left == right:
+                return i
+        return -1
+
+
+        # below is not the optimal way to do it, it works though
         if len(nums) <= 1:
             return 0
 
