@@ -1,10 +1,6 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        hash_map = {
-            ')': '(',
-            '}' : '{',
-            ']' : '['
-        }
+        hash_map = {")": "(", "}": "{", "]": "["}
 
         stack = []
         for item in s:
@@ -15,5 +11,5 @@ class Solution:
                     return False
             else:
                 stack.append(item)
-        
+
         return len(stack) == 0
