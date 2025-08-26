@@ -11,9 +11,9 @@ class Solution:
 
         for i in tokens:
             if i in hash_map:
-                b = nums.pop()
-                a = nums.pop()
-                res = hash_map[i](a, b)
+                second_element = nums.pop()
+                first_element = nums.pop()
+                res = hash_map[i](first_element, second_element)
                 nums.append(res) 
             else:
                 nums.append(int(i))
