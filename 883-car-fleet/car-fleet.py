@@ -1,6 +1,6 @@
 class Solution:
     def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
-        if len(position) == 1:
+        if len(position) <= 1:
             return 1
 
         pair = []
