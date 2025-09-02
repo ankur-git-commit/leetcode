@@ -11,7 +11,6 @@ class Solution:
         #     for j in range(i, outbound+1):
         #         print(i, j)
         # return False
-        print(rows, cols)
         
         for r in range(n):
             for c in range(n):
