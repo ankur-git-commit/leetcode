@@ -3,7 +3,11 @@ class Solution:
         if len(position) <= 1:
             return 1
 
-        pair = [(p, s) for p,s in zip(position, speed)]
+        # pair = [(p, s) for p,s in zip(position, speed)]
+        pair = []
+        for p,s in zip(position, speed):
+            pair.append((p,s))
+        
         # print(pair)
 
         stack = []
