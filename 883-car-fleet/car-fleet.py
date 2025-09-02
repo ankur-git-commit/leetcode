@@ -3,7 +3,8 @@ class Solution:
         if len(position) <= 1:
             return 1
 
-        pair = [[p, s] for p,s in zip(position, speed)]
+        pair = [(p, s) for p,s in zip(position, speed)]
+        # print(pair)
 
         stack = []
         for p, s in sorted(pair)[::-1]:
