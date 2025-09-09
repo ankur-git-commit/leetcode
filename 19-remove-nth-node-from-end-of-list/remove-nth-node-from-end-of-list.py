@@ -12,14 +12,14 @@ class Solution:
         while cur:
             ll_length += 1
             cur = cur.next
-        
+
         prev = None
         cur = head
         while cur:
             if ll_length == n and prev:
                 prev.next = cur.next
                 return head
-            if ll_length == n and not prev:
+            elif ll_length == n and not prev:
                 if not cur.next:
                     return None
                 else:
@@ -28,4 +28,3 @@ class Solution:
             ll_length -= 1
             prev = cur
             cur = cur.next
-        
