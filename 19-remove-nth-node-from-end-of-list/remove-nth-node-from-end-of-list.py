@@ -23,8 +23,7 @@ class Solution:
                 if not cur.next:
                     return None
                 else:
-                    prev = cur.next
-                    return prev
+                    return cur.next
             ll_length -= 1
             prev = cur
             cur = cur.next
