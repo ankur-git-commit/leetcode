@@ -45,9 +45,9 @@ class MyLinkedList:
             return
 
         new_node = ListNode(val)
-        if self.head is None:
+        if not self.head:
             if index == 0:
-                self.head = self.tail = new_node
+                self.head = new_node
             return
 
         if index == 0:
