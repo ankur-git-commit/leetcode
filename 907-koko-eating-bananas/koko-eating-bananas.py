@@ -15,8 +15,6 @@ class Solution:
             for p in piles:
                 total_time += math.ceil(p / k)
                 
-                if total_time > h:
-                    break
             
             if total_time <= h:
                 res = k
