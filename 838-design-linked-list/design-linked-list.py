@@ -41,32 +41,23 @@ class MyLinkedList:
         return
 
     def addAtIndex(self, index: int, val: int) -> None:
-        if index < 0:
-            return
-
-        new_node = ListNode(val)
-        if not self.head:
-            if index == 0:
-                self.head = new_node
-            return
-
         if index == 0:
-            new_node.next = self.head
-            self.head = new_node
+            self.addAtHead(val)
             return
-
-        curr = self.head
+        
+        prev = self.head
         for _ in range(index - 1):
-            if curr.next is None:
+            if not prev:
                 return
-            curr = curr.next
-
-        if curr.next is None:
-            curr.next = new_node
-            self.tail = new_node
-        else:
-            new_node.next = curr.next
-            curr.next = new_node
+            prev = prev.next
+        
+        if not prev:
+            return
+        
+        Node = ListNode(val)
+        Node.next = prev.next
+        prev.next = Node
+        return
 
     def deleteAtIndex(self, index: int) -> None:
         if not self.head:
