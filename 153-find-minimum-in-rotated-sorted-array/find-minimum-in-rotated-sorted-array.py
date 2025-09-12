@@ -10,5 +10,5 @@ class Solution:
             else:
                 R = mid
         
-        return nums[L]
+        return nums[R]
         
