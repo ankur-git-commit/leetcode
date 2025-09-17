@@ -12,9 +12,9 @@ class Solution:
         even = head.next
         dummy = even
         while even and even.next:
-            temp1 = even.next
+            # temp1 = even.next
             # temp2 = even.next.next
-            odd.next = temp1
+            odd.next = even.next
             odd = odd.next
             even.next = even.next.next
             even = even.next
