@@ -13,10 +13,10 @@ class Solution:
         dummy = even
         while even and even.next:
             temp1 = even.next
-            temp2 = even.next.next
+            # temp2 = even.next.next
             odd.next = temp1
             odd = odd.next
-            even.next = temp2
+            even.next = even.next.next
             even = even.next
         
         odd.next = dummy
