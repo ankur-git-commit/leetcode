@@ -16,7 +16,8 @@ class Solution:
             # temp2 = even.next.next
             odd.next = even.next
             odd = odd.next
-            even.next = even.next.next
+            # even.next = even.next.next #this works too
+            even.next = odd.next
             even = even.next
         
         odd.next = dummy
