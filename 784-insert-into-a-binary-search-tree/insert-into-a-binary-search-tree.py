@@ -14,12 +14,12 @@ class Solution:
         prev = None
 
         while cur:
+            prev = cur
             if val > cur.val:
-                prev = cur
                 cur = cur.right
             elif val < cur.val:
-                prev = cur
                 cur = cur.left
+
         if val > prev.val:
             prev.right = TreeNode(val)
         else:
@@ -28,13 +28,13 @@ class Solution:
         return root
         
         
-        #  recursive
-        # if not root:
-        #     return TreeNode(val)
+        # recursive
+        if not root:
+            return TreeNode(val)
         
-        # if val > root.val:
-        #     root.right = self.insertIntoBST(root.right, val)
-        # elif val < root.val:
-        #     root.left = self.insertIntoBST(root.left, val)
+        if val > root.val:
+            root.right = self.insertIntoBST(root.right, val)
+        elif val < root.val:
+            root.left = self.insertIntoBST(root.left, val)
         
-        # return root
+        return root
