@@ -11,7 +11,7 @@ class Solution:
 
         def inorder(root):
             if not root:
-                return 
+                return None
             inorder(root.left)
             self.k -= 1
             if self.k == 0:
