@@ -11,9 +11,19 @@ class Solution:
         
     def pickIndex(self) -> int:
         r = random.randint(1, self.total)
-        for i,p in enumerate(self.prefix_sum):
-            if r <=p:
-                return i
+        
+        L, R = 0, len(self.prefix_sum) - 1
+        while L< R:
+            mid = (L+R)//2
+            if r <= self.prefix_sum[mid]:
+                R = mid
+            else:
+                L = mid + 1
+        return L
+
+        # for i,p in enumerate(self.prefix_sum):
+        #     if r <=p:
+        #         return i
 
 # Your Solution object will be instantiated and called as such:
 # obj = Solution(w)
